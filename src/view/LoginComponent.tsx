@@ -1,85 +1,61 @@
-import React from 'react';
-import { TouchableOpacity, View, StyleSheet, Keyboard } from 'react-native';
-import { ComponentBase } from 'resub';
-import { Container, Text, Input, Item } from 'native-base';
+import React, {useState} from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TextInput,
+  Button,
+  TouchableOpacity,
+} from 'react-native';
+import {ComponentBase} from 'resub';
+import {Container, Input, Item} from 'native-base';
 import Colors from '../resources/Colors';
-import { Statusbar } from './common-components/Statusbar';
-import { Retry } from './common-components/Retry';
+import {Statusbar} from './common-components/Statusbar';
+import {Retry} from './common-components/Retry';
 import strings from '../resources/strings';
+import ImageAssets from '../assets/images';
 export class LoginComponent extends ComponentBase<any, any> {
-
   constructor(props: any) {
     super(props);
+    this.state = {
+      email: '',
+      password: '',
+    };
   }
   public render() {
+    const {email, password} = this.state;
     return (
-      <Container style={styles.container}>
-        <Statusbar barcolor={Colors.white} barcontent="dark-content" />
-          <View style={styles.content}>
-            <View>
-              <Item style={styles.mobileNumberItem}>
-                <Text
-                  style={[
-                    styles.phoneNo,
-                    { color: Colors.textPrimaryLite, marginLeft: 10 },
-                  ]}>
-                    
-                  {/* {this.state.isFocus ? strings.text_nine_one_number : ' '}{' '} */}
-                </Text>
-                <Input
-                  placeholder={
-                    strings.enter_mobile_number
-                  }
-                  keyboardType="number-pad"
-                  // value={this.state.mobileNumber}
-                  maxLength={10}
-                  style={
-                     styles.placeholder
-                  }
-                  // onChangeText={value => {
-                  //   this.textIsChanging(value);
-                  // }}
-                  onSubmitEditing={() => {
-                    Keyboard.dismiss();
-                    // this.viewModel.generateOtp();
-                  }}
-                  // onFocus={() => {
-                  //   this.viewModel.setMany({
-                  //     ...this.state,
-                  //     isErrorCardShow: false,
-                  //     isFocus: true,
-                  //     isUserBlocked: false,
-                  //     error: undefined,
-                  //   });
-                  // }}
-                />
-              </Item>
-              <View style={{ margin: 15, marginTop: 55 }}>
-                <TouchableOpacity
-                  // disabled={!this.state.isMobileNumberFilled}
-                  style={[
-                    styles.loginButton,
-                    {
-                      backgroundColor:Colors.buttonActive
-                    },
-                  ]}
-                  onPress={() => {
-                    // this.viewModel.generateOtp();
-                  }}>
-                  <Text
-                    style={[
-                      styles.loginText,
-                      {
-                        color:  Colors.TextColor,
-                      },
-                    ]}>
-                    {strings.login_button_text}
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-      </Container>
+      <View style={styles.container}>
+        <Image style={styles.image} source={ImageAssets.splash} />
+
+        <View style={styles.inputView}>
+          <TextInput
+            style={styles.TextInput}
+            placeholder="Username"
+            placeholderTextColor=""
+            onChangeText={email => this.setState({email: email})}
+          />
+        </View>
+
+        <View style={styles.inputView}>
+          <TextInput
+            style={styles.TextInput}
+            placeholder="Password"
+            placeholderTextColor=""
+            secureTextEntry={true}
+            onChangeText={password => this.setState({password: password})}
+          />
+        </View>
+
+        {/* <TouchableOpacity>
+          <Text style={styles.forgot_button}>Forgot Password?</Text>
+        </TouchableOpacity> */}
+
+        <TouchableOpacity style={styles.loginBtn}>
+          <Text style={styles.loginText}>LOGIN</Text>
+        </TouchableOpacity>
+      </View>
     );
   }
 
@@ -87,65 +63,49 @@ export class LoginComponent extends ComponentBase<any, any> {
   //   return this.viewModel.getState();
   // }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
     justifyContent: 'center',
   },
-  content: {
-    margin: 10,
-    flex: 1,
-    marginTop: 20,
-  },
-  hiText: {
-    fontFamily: 'JosefinSans-Regular',
-    fontSize: 20,
-    letterSpacing: -0.4,
-    padding: 16,
-    marginTop: 20,
-  },
-  welcomeText: {
-    fontFamily: 'JosefinSans-Regular',
-    marginLeft: 16,
-    fontSize: 16,
-    color: Colors.textTertiaryDark,
-    lineHeight: 22,
-    marginBottom: 2,
-  },
+
   image: {
-    height: 30,
-    width: 30,
+    marginBottom: 15,
   },
-  loginButton: {
-    alignSelf: 'center',
-    width: '100%',
-    height: 55,
+
+  inputView: {
+    backgroundColor: Colors.codeInputColor,
+    borderRadius: 30,
+    width: '80%',
+    height: 50,
+    marginBottom: 20,
+    alignItems: 'center',
+  },
+
+  TextInput: {
+    height: 50,
+    flex: 1,
+    padding: 10,
+    // marginLeft: 20,
+  },
+
+  forgot_button: {
+    height: 30,
+    marginBottom: 30,
+  },
+
+  loginBtn: {
+    width: '80%',
+    borderRadius: 25,
+    height: 50,
+    alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 28,
+    marginTop: 20,
+    backgroundColor: Colors.primary,
   },
   loginText: {
-    fontSize: 15,
-    alignSelf: 'center',
-    textAlign: 'center',
-  },
-  phoneNo: {
-    fontSize: 24,
-    fontWeight: '500',
-    fontFamily: 'JosefinSans-Medium',
-    letterSpacing: 1.73,
-  },
-  placeholder: {
-    fontSize: 14,
-  },
-  errorText: {
-    marginLeft: 10,
-    fontSize: 12,
-  },
-  mobileNumberItem: {
-    marginTop: 64,
-    marginLeft: 16,
-    marginRight: 16,
-    borderBottomWidth: 1,
+    color: 'white',
   },
 });

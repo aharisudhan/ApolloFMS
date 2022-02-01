@@ -15,6 +15,8 @@ const strings = {
   /** Placeholder Text */
 
   enter_mobile_number: 'Enter your mobile number',
+  username: 'Username',
+  password: 'Password',
 
   /** Button Text */
 
