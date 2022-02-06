@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentBase } from 'resub';
+import {ComponentBase} from 'resub';
 import {
   StyleSheet,
   Text,
@@ -8,15 +8,17 @@ import {
   Image,
   FlatList,
 } from 'react-native';
+import AssetsDetails from './AssetsDetails';
 export class DashBoardComponent extends ComponentBase<any, any> {
   constructor(props) {
     super(props);
   }
-  
+
   public render() {
     return (
       <View style={styles.container}>
-        <Text>Dashboard</Text>
+        {/* <Text>Dashboard</Text> */}
+        <AssetsDetails />
       </View>
     );
   }
