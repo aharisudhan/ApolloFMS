@@ -9,6 +9,7 @@ import {
   FlatList,
 } from 'react-native';
 import AssetsDetails from './AssetsDetails';
+import FmsActivity from './FmsActivity';
 export class DashBoardComponent extends ComponentBase<any, any> {
   constructor(props) {
     super(props);
@@ -18,7 +19,7 @@ export class DashBoardComponent extends ComponentBase<any, any> {
     return (
       <View style={styles.container}>
         {/* <Text>Dashboard</Text> */}
-        <AssetsDetails />
+        <FmsActivity />
       </View>
     );
   }
