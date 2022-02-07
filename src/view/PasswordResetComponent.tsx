@@ -11,7 +11,8 @@ import React, {Component} from 'react';
 import Colors from '../resources/Colors';
 
 export default class PasswordResetComponent extends Component<any, any> {
-  constructor(props) {
+  state: { oldPassword: string; newPassword: string; };
+  constructor(props: any) {
     super(props);
     this.state = {
       oldPassword: '',
@@ -51,13 +52,20 @@ export default class PasswordResetComponent extends Component<any, any> {
           />
         </View>
 
-        <TouchableOpacity style={styles.loginBtn}>
-          <Text style={styles.loginText}>Change Password</Text>
+        <View style={{
+          alignItems:'center',
+          justifyContent:'space-between',
+          flexDirection:'row',
+          width:'80%'
+        }}>
+          <TouchableOpacity style={styles.loginBtn}>
+          <Text style={styles.loginText}>Update Password</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.cancelBtn}>
           <Text style={styles.loginText}>Cancel</Text>
         </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -96,24 +104,24 @@ const styles = StyleSheet.create({
   },
 
   loginBtn: {
-    width: '80%',
+    width: '48%',
     borderRadius: 25,
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 20,
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.fms,
   },
   loginText: {
     color: 'white',
   },
   cancelBtn: {
-    width: '80%',
+    width: '48%',
     borderRadius: 25,
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 20,
-    backgroundColor: 'red',
+    backgroundColor: Colors.cancel,
   },
 });

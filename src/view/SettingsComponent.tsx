@@ -136,23 +136,23 @@ export class SettingsComponent extends ComponentBase<any, any> {
                   </View>
                 </View>
                 <View style={{flex: 1}}>
-                  <Text style={styles.name}>Harisudhan A</Text>
-                  <Text style={styles.phoneNo}>7418192535</Text>
+                  <Text style={styles.name}>Admin</Text>
+                  <Text style={styles.phoneNo}>Executive Officer</Text>
                 </View>
               </View>
             </Item>
-            <Text style={styles.titles}>{strings.gender_text}</Text>
+            {/* <Text style={styles.titles}>{strings.gender_text}</Text>
             <Item>
               <Text style={styles.number}>Male</Text>
-            </Item>
-            <Text style={styles.titles}>{strings.email_text}</Text>
+            </Item> */}
+            {/* <Text style={styles.titles}>{strings.email_text}</Text>
             <Item>
               <Text style={styles.number}>hariarul1995@gmail.com</Text>
-            </Item>
-            <Text style={styles.titles}>{strings.date_of_birth_text}</Text>
+            </Item> */}
+            {/* <Text style={styles.titles}>{strings.date_of_birth_text}</Text>
             <Item>
               <Text style={styles.number}>4th June</Text>
-            </Item>
+            </Item> */}
             <Item style={styles.logoutItem}>
               <TouchableOpacity
                 style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -162,6 +162,17 @@ export class SettingsComponent extends ComponentBase<any, any> {
                   style={styles.InfoIcon}
                 />
                 <Text style={styles.logout}>{strings.profile_edit_text}</Text>
+              </TouchableOpacity>
+            </Item>
+            <Item style={styles.logoutItem}>
+              <TouchableOpacity
+                style={{flexDirection: 'row', alignItems: 'center'}}>
+                <Icon
+                  ios="ios-settings"
+                  android="md-repeat"
+                  style={styles.InfoIcon}
+                />
+                <Text style={styles.logout}>Change PassWord</Text>
               </TouchableOpacity>
             </Item>
             <Item style={styles.logoutItem}>
@@ -186,12 +197,12 @@ export class SettingsComponent extends ComponentBase<any, any> {
             style={styles.closeButton}>
             <Icon ios="ios-close" android="md-close" style={styles.closeIcon} />
           </TouchableOpacity>
-          <Text style={styles.versionInfo}>
+          {/* <Text style={styles.versionInfo}>
             {strings.madewith}
             <Icon ios="ios-heart" android="md-heart" style={styles.madeIcon} />
-          </Text>
+          </Text> */}
         </Content>
-        <View style={{alignItems: 'center'}}>
+        {/* <View style={{alignItems: 'center'}}>
           <View style={styles.buttomItems}>
             <TouchableOpacity
               onPress={() => {
@@ -224,7 +235,7 @@ export class SettingsComponent extends ComponentBase<any, any> {
               />
             </TouchableOpacity>
           </View>
-        </View>
+        </View> */}
         <View style={{margin: 10}}>
           <Text style={styles.versionInfo}>
             {strings.appVersion_text}

@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import AssetsDetails from './AssetsDetails';
 import FmsActivity from './FmsActivity';
+import { LoginComponent } from './LoginComponent';
+import PasswordResetComponent from './PasswordResetComponent';
 export class DashBoardComponent extends ComponentBase<any, any> {
   constructor(props) {
     super(props);
@@ -19,7 +21,7 @@ export class DashBoardComponent extends ComponentBase<any, any> {
     return (
       <View style={styles.container}>
         {/* <Text>Dashboard</Text> */}
-        <FmsActivity />
+        <PasswordResetComponent />
       </View>
     );
   }

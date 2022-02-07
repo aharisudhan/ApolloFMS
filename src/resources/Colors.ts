@@ -52,6 +52,8 @@ const Colors = {
   textBlue: '#0a2c63',
   mapIcon: '#e67e22',
   cardInitativeGradiantStart: '#e4f2c2',
+  fms: '#2698eb',
+  cancel: '#FF0000',
 };
 
 export default Colors;
