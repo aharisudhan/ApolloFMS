@@ -16,7 +16,7 @@ import {Retry} from './common-components/Retry';
 import strings from '../resources/strings';
 import ImageAssets from '../assets/images';
 export class LoginComponent extends ComponentBase<any, any> {
-  state: { email: string; password: string; };
+  state: {email: string; password: string};
   constructor(props: any) {
     super(props);
     this.state = {
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 20,
-    backgroundColor: '#2698eb',
+    backgroundColor: '#05ADBF',
   },
   loginText: {
     color: 'white',
