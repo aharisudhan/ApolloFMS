@@ -1,43 +1,33 @@
 import {Text, View, StyleSheet} from 'react-native';
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import {Button, Card, Icon} from 'react-native-elements';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
 
-export default class Bottom extends Component {
-  render() {
-    return (
+export default function Bottom() {
+  const [start, useStart] = useState(false);
+  const startDay = () => {
+    useStart(true);
+  };
+  return (
+    <View>
       <View>
-        <View></View>
-        <View>
+        {!start ? (
           <Card
             containerStyle={{
               marginTop: 15,
               borderRadius: 10,
               alignItems: 'center',
             }}>
-            <Button
-              title="Start"
-              icon={{
-                name: 'hourglass-start',
-                type: 'font-awesome',
-                size: 15,
-                color: 'white',
-              }}
-              iconContainerStyle={{marginRight: 10}}
-              titleStyle={{fontWeight: '700'}}
-              buttonStyle={{
-                backgroundColor: 'rgba(90, 154, 230, 1)',
-                borderColor: 'transparent',
-                borderWidth: 0,
-                borderRadius: 30,
-              }}
-              containerStyle={{
-                width: 150,
-                marginHorizontal: 50,
-                // height: 40,
-              }}
+            <Icon
+              raised
+              name="hourglass-start"
+              type="font-awesome"
+              color="#f50"
+              onPress={() => startDay()}
+              size={40}
             />
           </Card>
+        ) : (
           <Card
             containerStyle={{
               marginTop: 15,
@@ -108,52 +98,12 @@ export default class Bottom extends Component {
               />
             </View>
           </Card>
-        </View>
-        <View>
-          <Card>
-            <View>
-              <View>
-                <Icon
-                  reverse
-                  name="ios-american-football"
-                  type="ionicon"
-                  color="#517fa4"
-                  onTextLayout={undefined}
-                  dataDetectorType={undefined}
-                />
-                <Text>Assets</Text>
-              </View>
-            </View>
-            <Icon
-              reverse
-              name="ios-american-football"
-              type="ionicon"
-              color="#517fa4"
-            />
-            <Icon
-              reverse
-              name="ios-american-football"
-              type="ionicon"
-              color="#517fa4"
-            />
-            <Icon
-              reverse
-              name="ios-american-football"
-              type="ionicon"
-              color="#517fa4"
-            />
-            <Icon
-              reverse
-              name="ios-american-football"
-              type="ionicon"
-              color="#517fa4"
-            />
-          </Card>
-        </View>
+        )}
       </View>
-    );
-  }
+    </View>
+  );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

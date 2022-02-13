@@ -21,9 +21,23 @@ export class DashBoardComponent extends ComponentBase<any, any> {
   public render() {
     return (
       <View style={styles.container}>
-        {/* <Text>Dashboard</Text> */}
-        {/* <LoginComponent /> */}
-        <Bottom />
+        <View
+          style={{
+            flex: 1.5,
+            backgroundColor: 'blue',
+          }}></View>
+        <View
+          style={{
+            flex: 3,
+            backgroundColor: 'green',
+          }}></View>
+        <View
+          style={{
+            flex: 1.5,
+            // backgroundColor: 'green',
+          }}>
+          <Bottom />
+        </View>
       </View>
     );
   }
