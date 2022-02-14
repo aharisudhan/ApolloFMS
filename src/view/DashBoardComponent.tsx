@@ -225,9 +225,9 @@ export class DashBoardComponent extends ComponentBase<any, any> {
                   // marginTop: 30,
                   marginHorizontal: 8,
                 }}>
-                <View style={styles.buttomCard}>
-                  <Bottom />
-                </View>
+                {/* <View style={styles.buttomCard}> */}
+                <Bottom />
+                {/* </View> */}
               </View>
             </View>
           </View>

@@ -31,16 +31,21 @@ export default function Bottom() {
     // console.log(a.diff(b, 'weeks')); //
   };
 
+  const endDay = () => {
+    useStart(false);
+  };
   return (
-    <View>
-      <View>
-        {!start ? (
-          <Card
-            containerStyle={{
-              marginTop: 15,
-              borderRadius: 10,
-              alignItems: 'center',
-            }}>
+    <>
+      {!start ? (
+        <Card
+          containerStyle={{
+            marginTop: 15,
+            borderRadius: 10,
+            alignItems: 'center',
+            width: '100%',
+            left: -14,
+          }}>
+          <View style={{alignItems: 'center'}}>
             <Icon
               raised
               name="hourglass-start"
@@ -50,84 +55,88 @@ export default function Bottom() {
               size={30}
               tvParallaxProperties={undefined}
             />
-            {/* <Text>
+            <Text>Start Day</Text>
+          </View>
+          {/* <Text>
               <Countdown eventTime={1626573600} interval={1000} />
             </Text> */}
-          </Card>
-        ) : (
-          <Card
-            containerStyle={{
-              marginTop: 15,
-              borderRadius: 10,
-              alignItems: 'center',
+        </Card>
+      ) : (
+        <Card
+          containerStyle={{
+            marginTop: 15,
+            borderRadius: 10,
+            alignItems: 'center',
+            width: '100%',
+            left: -14,
+          }}>
+          <View style={{alignItems: 'center'}}>
+            <AnimatedCircularProgress
+              size={60}
+              width={5}
+              fill={80}
+              tintColor="rgba(90, 154, 230, 1)"
+              onAnimationComplete={() => console.log('onAnimationComplete')}
+              backgroundColor="#3d5875">
+              {fill => <Text>{6}</Text>}
+            </AnimatedCircularProgress>
+          </View>
+          <View
+            style={{
+              // alignItems: 'center',
+              justifyContent: 'space-evenly',
+              flexDirection: 'row',
+              // flex: 1,
             }}>
-            <View style={{alignItems: 'center'}}>
-              <AnimatedCircularProgress
-                size={60}
-                width={5}
-                fill={80}
-                tintColor="rgba(90, 154, 230, 1)"
-                onAnimationComplete={() => console.log('onAnimationComplete')}
-                backgroundColor="#3d5875">
-                {fill => <Text>{6}</Text>}
-              </AnimatedCircularProgress>
-            </View>
-            <View
-              style={{
-                // alignItems: 'center',
-                justifyContent: 'space-evenly',
-                flexDirection: 'row',
-                // flex: 1,
-              }}>
-              <Button
-                title="Take Break"
-                icon={{
-                  name: 'flash',
-                  type: 'font-awesome',
-                  size: 15,
-                  color: 'white',
-                }}
-                iconContainerStyle={{marginRight: 10}}
-                titleStyle={{fontWeight: '700'}}
-                buttonStyle={{
-                  backgroundColor: 'rgba(90, 154, 230, 1)',
-                  borderColor: 'transparent',
-                  borderWidth: 0,
-                  borderRadius: 30,
-                }}
-                containerStyle={{
-                  width: 150,
-                  marginHorizontal: 50,
-                  marginVertical: 10,
-                }}
-              />
-              <Button
-                title="End Day"
-                icon={{
-                  name: 'calendar-check-o',
-                  type: 'font-awesome',
-                  size: 15,
-                  color: 'white',
-                }}
-                iconContainerStyle={{marginRight: 10}}
-                titleStyle={{fontWeight: '700'}}
-                buttonStyle={{
-                  backgroundColor: 'rgba(90, 154, 230, 1)',
-                  borderColor: 'transparent',
-                  borderWidth: 0,
-                  borderRadius: 30,
-                }}
-                containerStyle={{
-                  width: 150,
-                  marginHorizontal: 50,
-                  marginVertical: 10,
-                }}
-              />
-            </View>
-          </Card>
-        )}
-      </View>
-    </View>
+            <Button
+              title="Take Break"
+              icon={{
+                name: 'flash',
+                type: 'font-awesome',
+                size: 15,
+                color: 'white',
+              }}
+              iconContainerStyle={{marginRight: 10}}
+              titleStyle={{fontWeight: '700'}}
+              buttonStyle={{
+                backgroundColor: 'rgba(90, 154, 230, 1)',
+                borderColor: 'transparent',
+                borderWidth: 0,
+                borderRadius: 30,
+              }}
+              containerStyle={{
+                width: 150,
+                marginHorizontal: 50,
+                marginVertical: 10,
+              }}
+            />
+            <Button
+              title="End Day"
+              icon={{
+                name: 'calendar-check-o',
+                type: 'font-awesome',
+                size: 15,
+                color: 'white',
+              }}
+              iconContainerStyle={{marginRight: 10}}
+              titleStyle={{fontWeight: '700'}}
+              buttonStyle={{
+                backgroundColor: 'rgba(90, 154, 230, 1)',
+                borderColor: 'transparent',
+                borderWidth: 0,
+                borderRadius: 30,
+              }}
+              containerStyle={{
+                width: 150,
+                marginHorizontal: 50,
+                marginVertical: 10,
+              }}
+              onPress={() => endDay()}
+            />
+          </View>
+        </Card>
+      )}
+    </>
   );
 }
 
