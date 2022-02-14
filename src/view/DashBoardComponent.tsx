@@ -124,6 +124,7 @@ export class DashBoardComponent extends ComponentBase<any, any> {
                     alignItems: 'center',
                     width: '100%',
                     left: -14,
+                    height: '100%',
                   }}>
                   <Card.Title>ACTIVITIES</Card.Title>
                   <Card.Divider />
@@ -135,7 +136,7 @@ export class DashBoardComponent extends ComponentBase<any, any> {
                       flexDirection: 'row',
                       // backgroundColor: 'green',
                       width: '95%',
-                      marginTop: 10,
+                      // marginTop: 10,
                       marginBottom: 10,
                     }}>
                     <View style={{alignItems: 'center'}}>
@@ -144,7 +145,7 @@ export class DashBoardComponent extends ComponentBase<any, any> {
                         name="building"
                         type="font-awesome"
                         color="#517fa4"
-                        size={30}
+                        size={25}
                         tvParallaxProperties={undefined}
                       />
                       <Text>Assets</Text>
@@ -155,7 +156,7 @@ export class DashBoardComponent extends ComponentBase<any, any> {
                         name="build"
                         type="ionicon"
                         color="#517fa4"
-                        size={30}
+                        size={25}
                         tvParallaxProperties={undefined}
                       />
                       <Text>Maintenance</Text>
@@ -166,7 +167,7 @@ export class DashBoardComponent extends ComponentBase<any, any> {
                         name="briefcase"
                         type="ionicon"
                         color="#517fa4"
-                        size={30}
+                        size={25}
                         tvParallaxProperties={undefined}
                       />
                       <Text>Facility</Text>
@@ -188,7 +189,7 @@ export class DashBoardComponent extends ComponentBase<any, any> {
                         name="shopping-cart"
                         type="font-awsome"
                         color="#517fa4"
-                        size={30}
+                        size={25}
                         tvParallaxProperties={undefined}
                       />
                       <Text>Inventory</Text>
@@ -199,7 +200,7 @@ export class DashBoardComponent extends ComponentBase<any, any> {
                         name="text-document-inverted"
                         type="entypo"
                         color="#517fa4"
-                        size={30}
+                        size={25}
                         tvParallaxProperties={undefined}
                       />
                       <Text>Incident</Text>
@@ -210,7 +211,7 @@ export class DashBoardComponent extends ComponentBase<any, any> {
                         name="md-water-outline"
                         type="ionicon"
                         color="#517fa4"
-                        size={30}
+                        size={25}
                         tvParallaxProperties={undefined}
                       />
                       <Text>Fms Activity</Text>
@@ -389,6 +390,7 @@ const styles = StyleSheet.create({
     lineHeight: 21,
     fontWeight: '300',
     color: Colors.gradiantDarkgray,
+    marginBottom: 20,
   },
   textCenter: {
     fontFamily: 'Roboto-Light',

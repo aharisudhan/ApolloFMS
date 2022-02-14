@@ -1,9 +1,9 @@
 import * as React from 'react';
 import 'react-native-gesture-handler';
-import { ComponentBase } from 'resub';
+import {ComponentBase} from 'resub';
 import AsyncStorage from '@react-native-community/async-storage';
-import { TouchableOpacity, Image, StyleSheet, Text } from 'react-native';
-import { Root, View, Icon, Badge } from 'native-base';
+import {TouchableOpacity, Image, StyleSheet, Text} from 'react-native';
+import {Root, View, Icon, Badge} from 'native-base';
 import {
   createStackNavigator,
   createAppContainer,
@@ -11,13 +11,13 @@ import {
 } from 'react-navigation';
 import Colors from './resources/Colors';
 import ImageAssets from './assets/images';
-import { DashBoardComponent } from './view/DashBoardComponent';
+import {DashBoardComponent} from './view/DashBoardComponent';
 import strings from './resources/strings';
-import { SettingsComponent } from './view/SettingsComponent';
-import { SplashScreen } from './view/SplashScreen';
-import { LoginComponent } from './view/LoginComponent';
-import { DependencyInjector } from './dependency-injector/DependencyInjector';
-import { UserRepository } from './domain/repository/UserRepository';
+import {SettingsComponent} from './view/SettingsComponent';
+import {SplashScreen} from './view/SplashScreen';
+import {LoginComponent} from './view/LoginComponent';
+import {DependencyInjector} from './dependency-injector/DependencyInjector';
+import {UserRepository} from './domain/repository/UserRepository';
 export default class App extends ComponentBase<any, any> {
   private userRepository: UserRepository;
 
@@ -25,7 +25,6 @@ export default class App extends ComponentBase<any, any> {
     super(props);
     DependencyInjector.initialize(AsyncStorage);
     this.userRepository = DependencyInjector.default().provideUserRepository();
-
   }
 
   render(): any {
@@ -33,14 +32,14 @@ export default class App extends ComponentBase<any, any> {
       {
         DashBoardComponent: {
           screen: DashBoardComponent,
-          navigationOptions: ({ navigation }) => ({
+          navigationOptions: ({navigation}) => ({
             headerStyle: {
               backgroundColor: Colors.testing,
               height: 60,
             },
-            headerForceInset: { top: 'never', bottom: 'never' },
+            headerForceInset: {top: 'never', bottom: 'never'},
             headerTitle: (
-              <View style={{ flexDirection: 'row' }}>
+              <View style={{flexDirection: 'row'}}>
                 <View style={styles.headerView}>
                   <TouchableOpacity
                     onPress={() => {
@@ -48,17 +47,13 @@ export default class App extends ComponentBase<any, any> {
                     }}
                     style={[
                       styles.imageStyle,
-                      { margin: 10, flexDirection: 'row' },
+                      {margin: 10, flexDirection: 'row'},
                     ]}>
                     <Image source={ImageAssets.menu} />
                   </TouchableOpacity>
                 </View>
                 <View style={styles.headerView1}>
-                  <Text
-                    style={[
-                      styles.headerTitleText,
-                      { color: Colors.white },
-                    ]}>
+                  <Text style={[styles.headerTitleText, {color: Colors.white}]}>
                     {strings.dashboard_text}
                   </Text>
                 </View>
@@ -69,7 +64,7 @@ export default class App extends ComponentBase<any, any> {
                     }}
                     style={[
                       styles.imageStyle,
-                      { margin: 10, flexDirection: 'row' },
+                      {margin: 10, flexDirection: 'row'},
                     ]}>
                     <Icon
                       ios="ios-notifications"
@@ -78,7 +73,7 @@ export default class App extends ComponentBase<any, any> {
                     />
                     <Badge
                       warning
-                      style={{ height: 10, marginLeft: -20, marginTop: 5 }}
+                      style={{height: 10, marginLeft: -20, marginTop: 5}}
                     />
                   </TouchableOpacity>
                 </View>
@@ -110,20 +105,20 @@ export default class App extends ComponentBase<any, any> {
       {
         SplashScreen: {
           screen: SplashScreen,
-          navigationOptions: ({ navigation }) => ({
+          navigationOptions: ({navigation}) => ({
             header: null,
           }),
         },
         LoginComponent: {
           screen: LoginComponent,
-          navigationOptions: ({ navigation }) => ({
+          navigationOptions: ({navigation}) => ({
             header: null,
           }),
         },
         Home: {
           screen: DrawerContainer,
-          navigationOptions: ({ navigation }) => ({
-            headerForceInset: { top: 'never', bottom: 'never' },
+          navigationOptions: ({navigation}) => ({
+            headerForceInset: {top: 'never', bottom: 'never'},
             header: null,
             headerBackTitle: null,
           }),

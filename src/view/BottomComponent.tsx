@@ -105,7 +105,7 @@ export default function Bottom() {
                 borderRadius: 30,
               }}
               containerStyle={{
-                width: 150,
+                width: 130,
                 marginHorizontal: 50,
                 marginVertical: 10,
               }}
@@ -127,7 +127,7 @@ export default function Bottom() {
                 borderRadius: 30,
               }}
               containerStyle={{
-                width: 150,
+                width: 130,
                 marginHorizontal: 50,
                 marginVertical: 10,
               }}
