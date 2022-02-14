@@ -1,6 +1,6 @@
 const Colors = {
   primary: '#24113f',
-  backgroundDashboard: '#f2f2f2',
+  backgroundDashboard: '#2E86C1',
   buttonTextPink: '#ff3846',
   buttonInactive: '#e0e0e0',
   buttonActive: '#24113f',
@@ -26,7 +26,7 @@ const Colors = {
   cardTwoGradiantStart: '#d19ded',
   cardGradiantend: '#e6e6e6',
   chartGradiantstart: '#ebebeb',
-  dashboardText: '#220f3d',
+  dashboardText: '#2E86C1',
   chartAxis: '#8381c9',
   gradiantLightgray: 'rgba(124, 124, 124, 0)',
   gradiantDarkgray: '#0e0c10',
@@ -44,7 +44,9 @@ const Colors = {
   dashboardAboutBackground: '#cce6ff',
   dashboardMyActivitesIcons: '#00cc00',
   dashboardMyActivitiesBackground: '#ccffcc',
-  settingsIcons: '#a6a6a6',
+  settingsIcons: '#bf8040',
+  themeIcons: '#ff0055',
+  logoutIcons: '#333399',
   backBtn: '#24a5b3',
   faceBook: '#3b5998',
   instagram: '#3f729b',
@@ -52,6 +54,14 @@ const Colors = {
   textBlue: '#0a2c63',
   mapIcon: '#e67e22',
   cardInitativeGradiantStart: '#e4f2c2',
+  lightWhite: '#F8F9F9',
+  greyWhite: '#c2b1ac',
+  lightGrey: '#E5E7E9',
+  mailIcon: '#c25419',
+  dobIcon: '#f5b13b',
+  locationIcon: '#ed2d18',
+  testing: '#52E9FA',
+  lightblue: '#C6F9FE'
 };
 
 export default Colors;

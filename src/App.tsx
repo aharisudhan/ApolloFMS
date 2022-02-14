@@ -16,10 +16,16 @@ import strings from './resources/strings';
 import { SettingsComponent } from './view/SettingsComponent';
 import { SplashScreen } from './view/SplashScreen';
 import { LoginComponent } from './view/LoginComponent';
+import { DependencyInjector } from './dependency-injector/DependencyInjector';
+import { UserRepository } from './domain/repository/UserRepository';
 export default class App extends ComponentBase<any, any> {
+  private userRepository: UserRepository;
 
   constructor(props: {}) {
     super(props);
+    DependencyInjector.initialize(AsyncStorage);
+    this.userRepository = DependencyInjector.default().provideUserRepository();
+
   }
 
   render(): any {
@@ -29,7 +35,7 @@ export default class App extends ComponentBase<any, any> {
           screen: DashBoardComponent,
           navigationOptions: ({ navigation }) => ({
             headerStyle: {
-              backgroundColor: Colors.white,
+              backgroundColor: Colors.testing,
               height: 60,
             },
             headerForceInset: { top: 'never', bottom: 'never' },
@@ -51,7 +57,7 @@ export default class App extends ComponentBase<any, any> {
                   <Text
                     style={[
                       styles.headerTitleText,
-                      { color: Colors.buttonActive },
+                      { color: Colors.white },
                     ]}>
                     {strings.dashboard_text}
                   </Text>

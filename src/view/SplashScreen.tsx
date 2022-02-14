@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {View, Image} from 'react-native';
+import React, { Component } from 'react';
+import { View, Image } from 'react-native';
 import ImageAssets from '../assets/images';
 import Colors from '../resources/Colors';
-import {Statusbar} from './common-components/Statusbar';
+import { Statusbar } from './common-components/Statusbar';
 
 export class SplashScreen extends Component {
   constructor(props: any) {
@@ -15,8 +15,8 @@ export class SplashScreen extends Component {
   }
   render() {
     return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Statusbar barcolor={Colors.dashboardText} barcontent="light-content" />
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Statusbar barcolor={Colors.white} barcontent="light-content" />
         <Image source={ImageAssets.splash} />
       </View>
     );
