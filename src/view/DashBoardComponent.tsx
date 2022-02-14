@@ -15,7 +15,8 @@ import Colors from '../resources/Colors';
 import LinearGradient from 'react-native-linear-gradient';
 import CardView from 'react-native-cardview';
 import Bottom from './BottomComponent';
-
+import {AnimatedCircularProgress} from 'react-native-circular-progress';
+import {Card, Icon} from 'react-native-elements';
 export class DashBoardComponent extends ComponentBase<any, any> {
   constructor(props) {
     super(props);
@@ -48,9 +49,24 @@ export class DashBoardComponent extends ComponentBase<any, any> {
                         start={{x: 1, y: 0}}
                         end={{x: 1.0, y: 1.0}}>
                         <Text style={styles.textTop}> Maintenance </Text>
-                        <View style={{flex: 1, justifyContent: 'center'}}>
-                          <Text style={styles.textCenter}> Icon </Text>
-                          <Text style={styles.textBottom}> hello </Text>
+                        <View
+                          style={{
+                            flex: 1,
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            marginTop: 15,
+                          }}>
+                          <AnimatedCircularProgress
+                            size={90}
+                            width={10}
+                            fill={80}
+                            tintColor="rgba(90, 154, 230, 1)"
+                            onAnimationComplete={() =>
+                              console.log('onAnimationComplete')
+                            }
+                            backgroundColor="#3d5875">
+                            {fill => <Text>75%</Text>}
+                          </AnimatedCircularProgress>
                         </View>
                         <View style={{height: 40}}></View>
                       </LinearGradient>
@@ -68,9 +84,24 @@ export class DashBoardComponent extends ComponentBase<any, any> {
                         start={{x: 1, y: 0}}
                         end={{x: 1.0, y: 1.0}}>
                         <Text style={styles.textTop}> FMS Activities </Text>
-                        <View style={{flex: 1, justifyContent: 'center'}}>
-                          <Text style={styles.textCenter}> Icon </Text>
-                          <Text style={styles.textBottom}> hello </Text>
+                        <View
+                          style={{
+                            flex: 1,
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            marginTop: 15,
+                          }}>
+                          <AnimatedCircularProgress
+                            size={90}
+                            width={10}
+                            fill={20}
+                            tintColor="rgba(90, 154, 230, 1)"
+                            onAnimationComplete={() =>
+                              console.log('onAnimationComplete')
+                            }
+                            backgroundColor="#3d5875">
+                            {fill => <Text>20%</Text>}
+                          </AnimatedCircularProgress>
                         </View>
                         <View style={{height: 40}}></View>
                       </LinearGradient>
@@ -84,17 +115,119 @@ export class DashBoardComponent extends ComponentBase<any, any> {
                   flexDirection: 'row',
                   marginTop: 10,
                   marginHorizontal: 8,
-                }}></View>
+                  marginBottom: 10,
+                }}>
+                <Card
+                  containerStyle={{
+                    marginTop: 15,
+                    borderRadius: 10,
+                    alignItems: 'center',
+                    width: '100%',
+                    left: -14,
+                  }}>
+                  <Card.Title>ACTIVITIES</Card.Title>
+                  <Card.Divider />
+                  <View
+                    style={{
+                      // flex: 1,
+                      alignItems: 'center',
+                      justifyContent: 'space-evenly',
+                      flexDirection: 'row',
+                      // backgroundColor: 'green',
+                      width: '95%',
+                      marginTop: 10,
+                      marginBottom: 10,
+                    }}>
+                    <View style={{alignItems: 'center'}}>
+                      <Icon
+                        reverse
+                        name="building"
+                        type="font-awesome"
+                        color="#517fa4"
+                        size={30}
+                        tvParallaxProperties={undefined}
+                      />
+                      <Text>Assets</Text>
+                    </View>
+                    <View style={{alignItems: 'center'}}>
+                      <Icon
+                        reverse
+                        name="build"
+                        type="ionicon"
+                        color="#517fa4"
+                        size={30}
+                        tvParallaxProperties={undefined}
+                      />
+                      <Text>Maintenance</Text>
+                    </View>
+                    <View style={{alignItems: 'center'}}>
+                      <Icon
+                        reverse
+                        name="briefcase"
+                        type="ionicon"
+                        color="#517fa4"
+                        size={30}
+                        tvParallaxProperties={undefined}
+                      />
+                      <Text>Facility</Text>
+                    </View>
+                  </View>
+                  <View
+                    style={{
+                      // flex: 1,
+                      alignItems: 'center',
+                      justifyContent: 'space-evenly',
+                      flexDirection: 'row',
+                      // backgroundColor: 'green',
+                      width: '95%',
+                      marginTop: 10,
+                    }}>
+                    <View style={{alignItems: 'center'}}>
+                      <Icon
+                        reverse
+                        name="shopping-cart"
+                        type="font-awsome"
+                        color="#517fa4"
+                        size={30}
+                        tvParallaxProperties={undefined}
+                      />
+                      <Text>Inventory</Text>
+                    </View>
+                    <View style={{alignItems: 'center'}}>
+                      <Icon
+                        reverse
+                        name="text-document-inverted"
+                        type="entypo"
+                        color="#517fa4"
+                        size={30}
+                        tvParallaxProperties={undefined}
+                      />
+                      <Text>Incident</Text>
+                    </View>
+                    <View style={{alignItems: 'center'}}>
+                      <Icon
+                        reverse
+                        name="md-water-outline"
+                        type="ionicon"
+                        color="#517fa4"
+                        size={30}
+                        tvParallaxProperties={undefined}
+                      />
+                      <Text>Fms Activity</Text>
+                    </View>
+                  </View>
+                </Card>
+              </View>
               <View
                 style={{
                   flex: 0.25,
                   flexDirection: 'row',
-                  marginTop: 10,
+                  // marginTop: 30,
                   marginHorizontal: 8,
                 }}>
-                {/* <View style={styles.buttomCard}> */}
-                <Bottom />
-                {/* </View> */}
+                <View style={styles.buttomCard}>
+                  <Bottom />
+                </View>
               </View>
             </View>
           </View>
@@ -157,7 +290,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.37,
     shadowRadius: 7.49,
     elevation: 12,
-
     marginVertical: 3,
     backgroundColor: Colors.white,
     flexBasis: '100%',
