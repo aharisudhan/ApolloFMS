@@ -3,69 +3,29 @@ import React, {Component} from 'react';
 import {Button, Card, Icon} from 'react-native-elements';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
 
-export default class Bottom extends Component {
+export default class Bottom extends Component<any, any> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      start: false,
+    };
+  }
   render() {
+    const {start} = this.state;
     return (
       <View>
-        <View></View>
         <View>
-          <Card
-            containerStyle={{
-              marginTop: 15,
-              borderRadius: 10,
-              alignItems: 'center',
-            }}>
-            <Button
-              title="Start"
-              icon={{
-                name: 'hourglass-start',
-                type: 'font-awesome',
-                size: 15,
-                color: 'white',
-              }}
-              iconContainerStyle={{marginRight: 10}}
-              titleStyle={{fontWeight: '700'}}
-              buttonStyle={{
-                backgroundColor: 'rgba(90, 154, 230, 1)',
-                borderColor: 'transparent',
-                borderWidth: 0,
-                borderRadius: 30,
-              }}
+          {start ? (
+            <Card
               containerStyle={{
-                width: 150,
-                marginHorizontal: 50,
-                // height: 40,
-              }}
-            />
-          </Card>
-          <Card
-            containerStyle={{
-              marginTop: 15,
-              borderRadius: 10,
-              alignItems: 'center',
-            }}>
-            <View style={{alignItems: 'center'}}>
-              <AnimatedCircularProgress
-                size={60}
-                width={5}
-                fill={80}
-                tintColor="rgba(90, 154, 230, 1)"
-                onAnimationComplete={() => console.log('onAnimationComplete')}
-                backgroundColor="#3d5875">
-                {fill => <Text>{6}</Text>}
-              </AnimatedCircularProgress>
-            </View>
-            <View
-              style={{
-                // alignItems: 'center',
-                justifyContent: 'space-evenly',
-                flexDirection: 'row',
-                // flex: 1,
+                marginTop: 15,
+                borderRadius: 10,
+                alignItems: 'center',
               }}>
               <Button
-                title="Take Break"
+                title="Start"
                 icon={{
-                  name: 'flash',
+                  name: 'hourglass-start',
                   type: 'font-awesome',
                   size: 15,
                   color: 'white',
@@ -81,74 +41,83 @@ export default class Bottom extends Component {
                 containerStyle={{
                   width: 150,
                   marginHorizontal: 50,
-                  marginVertical: 10,
+                  // height: 40,
                 }}
               />
-              <Button
-                title="End Day"
-                icon={{
-                  name: 'calendar-check-o',
-                  type: 'font-awesome',
-                  size: 15,
-                  color: 'white',
-                }}
-                iconContainerStyle={{marginRight: 10}}
-                titleStyle={{fontWeight: '700'}}
-                buttonStyle={{
-                  backgroundColor: 'rgba(90, 154, 230, 1)',
-                  borderColor: 'transparent',
-                  borderWidth: 0,
-                  borderRadius: 30,
-                }}
-                containerStyle={{
-                  width: 150,
-                  marginHorizontal: 50,
-                  marginVertical: 10,
-                }}
-              />
-            </View>
-          </Card>
-        </View>
-        <View>
-          <Card>
-            <View>
-              <View>
-                <Icon
-                  reverse
-                  name="ios-american-football"
-                  type="ionicon"
-                  color="#517fa4"
-                  onTextLayout={undefined}
-                  dataDetectorType={undefined}
-                />
-                <Text>Assets</Text>
+            </Card>
+          ) : (
+            <Card
+              containerStyle={{
+                marginTop: 15,
+                borderRadius: 10,
+                alignItems: 'center',
+                width: '95%',
+              }}>
+              <View style={{alignItems: 'center'}}>
+                <AnimatedCircularProgress
+                  size={60}
+                  width={5}
+                  fill={80}
+                  tintColor="rgba(90, 154, 230, 1)"
+                  onAnimationComplete={() => console.log('onAnimationComplete')}
+                  backgroundColor="#3d5875">
+                  {fill => <Text>{6}</Text>}
+                </AnimatedCircularProgress>
               </View>
-            </View>
-            <Icon
-              reverse
-              name="ios-american-football"
-              type="ionicon"
-              color="#517fa4"
-            />
-            <Icon
-              reverse
-              name="ios-american-football"
-              type="ionicon"
-              color="#517fa4"
-            />
-            <Icon
-              reverse
-              name="ios-american-football"
-              type="ionicon"
-              color="#517fa4"
-            />
-            <Icon
-              reverse
-              name="ios-american-football"
-              type="ionicon"
-              color="#517fa4"
-            />
-          </Card>
+              <View
+                style={{
+                  // alignItems: 'center',
+                  justifyContent: 'space-evenly',
+                  flexDirection: 'row',
+                  // flex: 1,
+                }}>
+                <Button
+                  title="Take Break"
+                  icon={{
+                    name: 'flash',
+                    type: 'font-awesome',
+                    size: 15,
+                    color: 'white',
+                  }}
+                  iconContainerStyle={{marginRight: 10}}
+                  titleStyle={{fontWeight: '700'}}
+                  buttonStyle={{
+                    backgroundColor: 'rgba(90, 154, 230, 1)',
+                    borderColor: 'transparent',
+                    borderWidth: 0,
+                    borderRadius: 30,
+                  }}
+                  containerStyle={{
+                    width: 150,
+                    marginHorizontal: 50,
+                    marginVertical: 10,
+                  }}
+                />
+                <Button
+                  title="End Day"
+                  icon={{
+                    name: 'calendar-check-o',
+                    type: 'font-awesome',
+                    size: 15,
+                    color: 'white',
+                  }}
+                  iconContainerStyle={{marginRight: 10}}
+                  titleStyle={{fontWeight: '700'}}
+                  buttonStyle={{
+                    backgroundColor: 'rgba(90, 154, 230, 1)',
+                    borderColor: 'transparent',
+                    borderWidth: 0,
+                    borderRadius: 30,
+                  }}
+                  containerStyle={{
+                    width: 150,
+                    marginHorizontal: 50,
+                    marginVertical: 10,
+                  }}
+                />
+              </View>
+            </Card>
+          )}
         </View>
       </View>
     );
