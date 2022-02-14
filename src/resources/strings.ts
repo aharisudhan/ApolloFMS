@@ -32,7 +32,7 @@ const strings = {
   in_progress_text: 'in Progress',
   next_text: 'NEXT',
   skip_text: 'SKIP',
-  dashboard_text: 'Dashboard',
+  dashboard_text: 'mAssertRx',
   involvement_text: 'Volunteers Involvement',
   events_text: 'Upcoming Events',
   team_text: 'Our Team',
