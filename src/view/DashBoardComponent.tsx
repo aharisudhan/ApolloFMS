@@ -34,7 +34,6 @@ export class DashBoardComponent extends ComponentBase<any, any> {
         <View
           style={{
             flex: 1.5,
-            // backgroundColor: 'green',
           }}>
           <Bottom />
         </View>
