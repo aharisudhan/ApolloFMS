@@ -1,6 +1,6 @@
-# BeingSocial
+# ApolloFMS
 
-Being Social
+Apollo Facility Management Services
 
 ## Setup
 
