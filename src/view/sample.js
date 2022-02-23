@@ -52,7 +52,11 @@ const master = {
     },
   ],
   nation: [
-    {NATIONID_SYSTEM: '2', NATION_CODE: 'KRC', NATION_NAME: 'Bangalore South'},
+    {
+      NATIONID_SYSTEM: '2',
+      NATION_CODE: 'KRC',
+      NATION_NAME: 'Bangalore South',
+    },
   ],
   vendor_details: [
     {
@@ -229,7 +233,11 @@ const master = {
     },
   ],
   result_code: [
-    {RESULT_CODEID_SYSTEM: '1', RESULT_CODE: 'HML', RESULT_CODE_NAME: 'H-M-L'},
+    {
+      RESULT_CODEID_SYSTEM: '1',
+      RESULT_CODE: 'HML',
+      RESULT_CODE_NAME: 'H-M-L',
+    },
   ],
   frequency: [
     {
@@ -435,4 +443,4 @@ const maintenance = {
 
 /* End maintenance details section */
 
-export {assets, maintenance};
+export { assets, maintenance };
